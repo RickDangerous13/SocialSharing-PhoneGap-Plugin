@@ -395,9 +395,9 @@ public class SocialSharing extends CordovaPlugin {
       public void run() {
         Intent intent = new Intent(Intent.ACTION_SENDTO);
         intent.setData(Uri.parse("smsto:" + number));
-
-        intent.putExtra("sms_body", shareMessage);
-        intent.putExtra("sms_subject", subject);
+        intent.putExtra(Intent.EXTRA_TEXT,shareMessage);
+        //intent.putExtra("sms_body", shareMessage);
+        //intent.putExtra("sms_subject", subject);
         intent.setPackage("com.whatsapp");
 
         try {
